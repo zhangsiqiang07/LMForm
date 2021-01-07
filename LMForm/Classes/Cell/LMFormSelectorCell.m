@@ -33,10 +33,11 @@
 {
     [super layoutSubviews];
     
-    self.textField.frame = CGRectMake(self.titleLabel.maxX + LM_DefaultSpace , 0, LM_Screen_Width - self.titleLabel.maxX - LM_ObjDefault(self.model.margin, LM_DefautMargin) - LM_RightArrowWidth - LM_DefaultSpace , self.contentView.height);
-    
+    self.titleLabel.centerY = self.contentView.height / 2 - LM_XX_6(10);
+    self.textField.frame = CGRectMake(LM_ObjDefault(self.model.margin, LM_DefautMargin) , LM_XX_6(30), LM_Screen_Width - 2 * LM_ObjDefault(self.model.margin, LM_DefautMargin), LM_XX_6(40));
+    self.textField.textAlignment = NSTextAlignmentLeft;
     self.arrowImgView.frame = CGRectMake(LM_Screen_Width - LM_ObjDefault(self.model.margin, LM_DefautMargin) - LM_RightArrowWidth, 0, LM_RightArrowWidth, LM_RightArrowWidth);
-    self.arrowImgView.centerY = self.contentView.height / 2;
+    self.arrowImgView.centerY = self.textField.centerY;
 }
 
 #pragma mark - Responce
