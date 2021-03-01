@@ -42,6 +42,10 @@
         /*** 键盘 ***/
         [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
         [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+        [IQKeyboardManager sharedManager].toolbarManageBehaviour = IQAutoToolbarBySubviews;
+        [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
+        [IQKeyboardManager sharedManager].enableAutoToolbar = YES; // 控制是否显示键盘上的工具条
+        [IQKeyboardManager sharedManager].shouldShowToolbarPlaceholder = YES; // 是否显示占位文字   
     }
     return self;
 }
